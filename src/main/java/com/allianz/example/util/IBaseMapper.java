@@ -1,6 +1,7 @@
 package com.allianz.example.util;
 
 import com.allianz.example.util.dbutil.BaseEntity;
+import org.springframework.http.RequestEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -20,5 +21,6 @@ public interface IBaseMapper<DTO extends BaseDTO, Entity extends BaseEntity, Req
 
     List<Entity> requestDtoListTOEntityList(List<RequestDTO> dtoList);
 
+    Entity requestDTOToExistEntity(RequestDTO requestDTO, Entity entity);
 
 }

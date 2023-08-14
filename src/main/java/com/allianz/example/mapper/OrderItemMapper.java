@@ -94,4 +94,9 @@ public class OrderItemMapper implements IBaseMapper<OrderItemDTO, OrderItemEntit
 
         return entityList;
     }
+
+    @Override
+    public OrderItemEntity requestDTOToExistEntity(OrderItemRequestDTO orderItemRequestDTO, OrderItemEntity entity) {
+        return null;
+    }
 }

@@ -11,6 +11,12 @@ import java.util.List;
 @Data
 @Entity
 @Table
+@AttributeOverride(
+        name = "uuid",
+        column = @Column(
+                name = "order_uuid"
+        )
+)
 public class OrderEntity extends BaseEntity {
 
     @ManyToOne

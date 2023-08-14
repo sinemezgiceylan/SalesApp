@@ -99,4 +99,9 @@ public class BillMapper implements IBaseMapper<BillDTO, BillEntity, BillRequestD
     public List<BillEntity> requestDtoListTOEntityList(List<BillRequestDTO> billRequestDTOS) {
         return null;
     }
+
+    @Override
+    public BillEntity requestDTOToExistEntity(BillRequestDTO billRequestDTO, BillEntity entity) {
+        return null;
+    }
 }

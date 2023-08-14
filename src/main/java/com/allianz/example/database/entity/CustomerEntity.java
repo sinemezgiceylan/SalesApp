@@ -9,6 +9,12 @@ import java.util.List;
 @Data
 @Entity
 @Table
+@AttributeOverride(
+        name = "uuid",
+        column = @Column(
+                name = "customer_uuid"
+        )
+)
 public class CustomerEntity extends BaseEntity {
 
     @OneToOne

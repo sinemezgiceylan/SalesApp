@@ -5,6 +5,7 @@ import com.allianz.example.model.OrderDTO;
 import com.allianz.example.model.requestDTO.OrderRequestDTO;
 import com.allianz.example.util.IBaseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -14,9 +15,12 @@ import java.util.List;
 public class OrderMapper implements IBaseMapper<OrderDTO, OrderEntity, OrderRequestDTO> {
 
     @Autowired
-    OrderItemMapper orderItemMapper;
-    @Autowired
+    @Lazy
     CustomerMapper customerMapper;
+
+    @Autowired
+    OrderItemMapper orderItemMapper;
+
 
     @Override
     public OrderDTO entityToDTO(OrderEntity entity) {
@@ -89,6 +93,11 @@ public class OrderMapper implements IBaseMapper<OrderDTO, OrderEntity, OrderRequ
 
     @Override
     public List<OrderEntity> requestDtoListTOEntityList(List<OrderRequestDTO> orderRequestDTOS) {
+        return null;
+    }
+
+    @Override
+    public OrderEntity requestDTOToExistEntity(OrderRequestDTO orderRequestDTO, OrderEntity entity) {
         return null;
     }
 }

@@ -94,4 +94,9 @@ public class SellerMapper implements IBaseMapper<SellerDTO, SellerEntity, Seller
     public List<SellerEntity> requestDtoListTOEntityList(List<SellerRequestDTO> sellerRequestDTOS) {
         return null;
     }
+
+    @Override
+    public SellerEntity requestDTOToExistEntity(SellerRequestDTO sellerRequestDTO, SellerEntity entity) {
+        return null;
+    }
 }

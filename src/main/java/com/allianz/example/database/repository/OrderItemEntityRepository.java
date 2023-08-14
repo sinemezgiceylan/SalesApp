@@ -3,6 +3,7 @@ package com.allianz.example.database.repository;
 import com.allianz.example.database.entity.AddressEntity;
 import com.allianz.example.database.entity.BillEntity;
 import com.allianz.example.database.entity.OrderItemEntity;
+import com.allianz.example.util.IBaseRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -11,7 +12,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface OrderItemEntityRepository extends JpaRepository<OrderItemEntity, Long> {
+public interface OrderItemEntityRepository extends IBaseRepository<OrderItemEntity> {
 
-    Optional<OrderItemEntity> findByUuid(UUID uuid);
 }

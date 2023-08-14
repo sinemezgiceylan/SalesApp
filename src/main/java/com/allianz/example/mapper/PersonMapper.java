@@ -80,4 +80,9 @@ public class PersonMapper implements IBaseMapper<PersonDTO, PersonEntity, Person
     public List<PersonEntity> requestDtoListTOEntityList(List<PersonRequestDTO> personRequestDTOS) {
         return null;
     }
+
+    @Override
+    public PersonEntity requestDTOToExistEntity(PersonRequestDTO personRequestDTO, PersonEntity entity) {
+        return null;
+    }
 }

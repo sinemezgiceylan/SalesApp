@@ -14,6 +14,12 @@ import java.util.Set;
 @Data
 @Entity
 @Table
+@AttributeOverride(
+        name = "uuid",
+        column = @Column(
+                name = "product_uuid"
+        )
+)
 public class ProductEntity extends BaseEntity {
 
     @Column

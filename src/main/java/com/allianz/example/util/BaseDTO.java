@@ -1,5 +1,6 @@
 package com.allianz.example.util;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.GeneratedValue;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
@@ -13,9 +14,13 @@ import java.util.UUID;
 @Data
 public class BaseDTO {
 
+    @JsonIgnore
     private Long id;
+    @JsonIgnore
     private UUID uuid;
+    @JsonIgnore
     private Date creationDate;
+    @JsonIgnore
     private Date updatedDate;
 
 
