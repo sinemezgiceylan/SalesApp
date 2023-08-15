@@ -2,6 +2,8 @@ package com.allianz.example.controller;
 
 
 import com.allianz.example.database.entity.SettingsEntity;
+import com.allianz.example.database.repository.SettingsEntityRepository;
+import com.allianz.example.mapper.SettingsMapper;
 import com.allianz.example.model.SettingsDTO;
 import com.allianz.example.model.requestDTO.SettingsRequestDTO;
 import com.allianz.example.service.SettingsService;
@@ -15,7 +17,8 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("settings")
-public class SettingsController extends BaseController<SettingsEntity, SettingsDTO, SettingsRequestDTO, SettingsService> {
+public class SettingsController extends BaseController<SettingsEntity, SettingsDTO, SettingsRequestDTO, SettingsMapper,
+        SettingsEntityRepository, SettingsService> {
 
     @Autowired
     SettingsService settingsService;

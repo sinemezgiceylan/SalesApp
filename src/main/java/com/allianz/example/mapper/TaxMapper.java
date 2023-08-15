@@ -1,9 +1,11 @@
 package com.allianz.example.mapper;
 
 import com.allianz.example.database.entity.TaxEntity;
+import com.allianz.example.model.PageDTO;
 import com.allianz.example.model.TaxDTO;
 import com.allianz.example.model.requestDTO.TaxRequestDTO;
 import com.allianz.example.util.IBaseMapper;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -92,5 +94,20 @@ public class TaxMapper implements IBaseMapper<TaxDTO, TaxEntity, TaxRequestDTO> 
         entity.setRate(taxRequestDTO.getRate());
 
         return entity;
+    }
+
+    @Override
+    public PageDTO<TaxDTO> pageEntityToPageDTO(Page<TaxEntity> taxEntities) {
+
+        PageDTO<TaxDTO> taxDTOPageDTO = new PageDTO<>();
+        taxDTOPageDTO.setContent(entityListToDTOList(taxEntities.getContent()));
+        taxDTOPageDTO.setTotalPage(taxEntities.getTotalPages());
+        taxDTOPageDTO.setSize(taxEntities.getSize());
+        taxDTOPageDTO.setNumber(taxEntities.getNumber());
+        taxDTOPageDTO.setSort(taxEntities.getSort());
+        taxDTOPageDTO.setNumberOfElement(taxEntities.getTotalPages());
+        taxDTOPageDTO.setTotalElements(taxEntities.getTotalElements());
+
+        return taxDTOPageDTO;
     }
 }

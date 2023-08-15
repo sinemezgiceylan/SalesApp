@@ -23,8 +23,7 @@ import java.util.UUID;
 //bean
 @Service
 public class PersonService extends BaseService<PersonEntity, PersonDTO, PersonRequestDTO,
-        IBaseMapper<PersonDTO, PersonEntity, PersonRequestDTO>,
-        IBaseRepository<PersonEntity>> {
+        PersonMapper, PersonEntityRepository> {
 
 
     @Value("${gizem:25}")

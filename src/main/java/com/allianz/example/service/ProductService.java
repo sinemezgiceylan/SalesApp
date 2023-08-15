@@ -25,8 +25,7 @@ import java.util.UUID;
 
 @Service
 public class ProductService extends BaseService<ProductEntity, ProductDTO, ProductRequestDTO,
-        IBaseMapper<ProductDTO, ProductEntity, ProductRequestDTO>,
-        IBaseRepository<ProductEntity>> {
+        ProductMapper, ProductEntityRepository> {
 
     @Autowired
     ProductEntityRepository productEntityRepository;

@@ -19,9 +19,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public class TaxService extends BaseService<TaxEntity, TaxDTO, TaxRequestDTO,
-        IBaseMapper<TaxDTO, TaxEntity, TaxRequestDTO>,
-        IBaseRepository<TaxEntity>> {
+public class TaxService extends BaseService<TaxEntity, TaxDTO, TaxRequestDTO, TaxMapper, TaxEntityRepository> {
 
     @Autowired
     private TaxMapper taxMapper;

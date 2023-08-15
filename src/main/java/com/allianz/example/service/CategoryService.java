@@ -24,8 +24,7 @@ import java.util.UUID;
 
 @Service
 public class CategoryService extends BaseService<CategoryEntity, CategoryDTO, CategoryRequestDTO,
-        IBaseMapper<CategoryDTO, CategoryEntity, CategoryRequestDTO>,
-        IBaseRepository<CategoryEntity>> {
+        CategoryMapper, CategoryEntityRepository> {
 
     @Autowired
     CategoryEntityRepository categoryEntityRepository;

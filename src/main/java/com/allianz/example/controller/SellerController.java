@@ -1,6 +1,8 @@
 package com.allianz.example.controller;
 
 import com.allianz.example.database.entity.SellerEntity;
+import com.allianz.example.database.repository.SellerEntityRepository;
+import com.allianz.example.mapper.SellerMapper;
 import com.allianz.example.model.SellerDTO;
 import com.allianz.example.model.requestDTO.SellerRequestDTO;
 import com.allianz.example.service.SellerService;
@@ -11,7 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("seller")
-public class SellerController extends BaseController<SellerEntity, SellerDTO, SellerRequestDTO, SellerService> {
+public class SellerController extends BaseController<SellerEntity, SellerDTO, SellerRequestDTO, SellerMapper,
+        SellerEntityRepository, SellerService> {
 
     @Autowired
     SellerService sellerService;

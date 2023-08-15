@@ -1,6 +1,8 @@
 package com.allianz.example.util;
 
+import com.allianz.example.model.PageDTO;
 import com.allianz.example.util.dbutil.BaseEntity;
+import org.springframework.data.domain.Page;
 import org.springframework.http.RequestEntity;
 import org.springframework.stereotype.Component;
 
@@ -22,5 +24,7 @@ public interface IBaseMapper<DTO extends BaseDTO, Entity extends BaseEntity, Req
     List<Entity> requestDtoListTOEntityList(List<RequestDTO> dtoList);
 
     Entity requestDTOToExistEntity(RequestDTO requestDTO, Entity entity);
+
+    PageDTO<DTO> pageEntityToPageDTO(Page<Entity> entityPage);
 
 }

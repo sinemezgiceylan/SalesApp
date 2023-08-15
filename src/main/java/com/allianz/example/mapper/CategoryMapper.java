@@ -3,11 +3,13 @@ package com.allianz.example.mapper;
 import com.allianz.example.database.entity.CategoryEntity;
 import com.allianz.example.database.entity.ProductEntity;
 import com.allianz.example.model.CategoryDTO;
+import com.allianz.example.model.PageDTO;
 import com.allianz.example.model.ProductDTO;
 import com.allianz.example.model.requestDTO.CategoryRequestDTO;
 import com.allianz.example.util.IBaseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -97,6 +99,11 @@ public class CategoryMapper implements IBaseMapper<CategoryDTO, CategoryEntity, 
 
     @Override
     public CategoryEntity requestDTOToExistEntity(CategoryRequestDTO categoryRequestDTO, CategoryEntity entity) {
+        return null;
+    }
+
+    @Override
+    public PageDTO<CategoryDTO> pageEntityToPageDTO(Page<CategoryEntity> categoryEntities) {
         return null;
     }
 }

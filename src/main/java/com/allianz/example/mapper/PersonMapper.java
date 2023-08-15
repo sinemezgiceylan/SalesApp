@@ -1,9 +1,11 @@
 package com.allianz.example.mapper;
 
 import com.allianz.example.database.entity.PersonEntity;
+import com.allianz.example.model.PageDTO;
 import com.allianz.example.model.PersonDTO;
 import com.allianz.example.model.requestDTO.PersonRequestDTO;
 import com.allianz.example.util.IBaseMapper;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -83,6 +85,11 @@ public class PersonMapper implements IBaseMapper<PersonDTO, PersonEntity, Person
 
     @Override
     public PersonEntity requestDTOToExistEntity(PersonRequestDTO personRequestDTO, PersonEntity entity) {
+        return null;
+    }
+
+    @Override
+    public PageDTO<PersonDTO> pageEntityToPageDTO(Page<PersonEntity> personEntities) {
         return null;
     }
 }

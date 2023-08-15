@@ -20,8 +20,7 @@ import java.util.UUID;
 
 @Service
 public class AddressService extends BaseService<AddressEntity, AddressDTO, AddressRequestDTO,
-        IBaseMapper<AddressDTO, AddressEntity, AddressRequestDTO>,
-        IBaseRepository<AddressEntity>> {
+        AddressMapper, AddressEntityRepository> {
 
     @Autowired
     AddressEntityRepository addressEntityRepository;

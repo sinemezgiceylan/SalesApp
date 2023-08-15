@@ -2,8 +2,10 @@ package com.allianz.example.mapper;
 
 import com.allianz.example.database.entity.AddressEntity;
 import com.allianz.example.model.AddressDTO;
+import com.allianz.example.model.PageDTO;
 import com.allianz.example.model.requestDTO.AddressRequestDTO;
 import com.allianz.example.util.IBaseMapper;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -77,6 +79,11 @@ public class AddressMapper implements IBaseMapper<AddressDTO, AddressEntity, Add
 
     @Override
     public AddressEntity requestDTOToExistEntity(AddressRequestDTO addressRequestDTO, AddressEntity entity) {
+        return null;
+    }
+
+    @Override
+    public PageDTO<AddressDTO> pageEntityToPageDTO(Page<AddressEntity> addressEntities) {
         return null;
     }
 }

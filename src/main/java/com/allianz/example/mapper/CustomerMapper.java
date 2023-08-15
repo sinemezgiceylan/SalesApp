@@ -2,10 +2,12 @@ package com.allianz.example.mapper;
 
 import com.allianz.example.database.entity.CustomerEntity;
 import com.allianz.example.model.CustomerDTO;
+import com.allianz.example.model.PageDTO;
 import com.allianz.example.model.requestDTO.CustomerRequestDTO;
 import com.allianz.example.util.IBaseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -105,6 +107,11 @@ public class CustomerMapper implements IBaseMapper<CustomerDTO, CustomerEntity, 
 
     @Override
     public CustomerEntity requestDTOToExistEntity(CustomerRequestDTO customerRequestDTO, CustomerEntity entity) {
+        return null;
+    }
+
+    @Override
+    public PageDTO<CustomerDTO> pageEntityToPageDTO(Page<CustomerEntity> customerEntities) {
         return null;
     }
 }

@@ -23,8 +23,7 @@ import java.util.UUID;
 
 @Service
 public class OrderService extends BaseService<OrderEntity, OrderDTO, OrderRequestDTO,
-        IBaseMapper<OrderDTO, OrderEntity, OrderRequestDTO>,
-        IBaseRepository<OrderEntity>> {
+        OrderMapper, OrderEntityRepository> {
 
     @Autowired
     OrderEntityRepository orderEntityRepository;

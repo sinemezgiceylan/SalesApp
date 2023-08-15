@@ -1,4 +1,5 @@
 package com.allianz.example.util;
+import com.allianz.example.model.PageDTO;
 import com.allianz.example.util.dbutil.BaseEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,9 @@ public abstract class BaseController<
         Entity extends BaseEntity,
         DTO extends BaseDTO,
         RequestDto extends BaseDTO,
-        Service extends BaseService<Entity, DTO, RequestDto, IBaseMapper<DTO, Entity, RequestDto>, IBaseRepository<Entity>>> {
+        Mapper extends IBaseMapper<DTO, Entity, RequestDto>,
+        Repository extends IBaseRepository<Entity>,
+        Service extends BaseService<Entity, DTO, RequestDto, Mapper, Repository>> {
 
     protected abstract Service getService();
 
@@ -20,9 +23,9 @@ public abstract class BaseController<
         return new ResponseEntity<>(getService().save(requestDTO), HttpStatus.CREATED);
     }
 
-    @GetMapping
-    public ResponseEntity<List<DTO>> getAll() {
-        return new ResponseEntity<>(getService().getAll(), HttpStatus.OK);
+    @GetMapping("page-number/{pNum}/page-size/{pSize}")
+    public ResponseEntity<PageDTO<DTO>> getAll(@RequestBody BaseFilterRequestDTO baseFilterRequestDTO) {
+        return new ResponseEntity<>(getService().getAll(baseFilterRequestDTO), HttpStatus.OK);
     }
 
     @GetMapping("/{uuid}")

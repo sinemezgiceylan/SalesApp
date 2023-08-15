@@ -25,8 +25,7 @@ import java.util.UUID;
 
 @Service
 public class OrderItemService extends BaseService<OrderItemEntity, OrderItemDTO, OrderItemRequestDTO,
-        IBaseMapper<OrderItemDTO, OrderItemEntity, OrderItemRequestDTO>,
-        IBaseRepository<OrderItemEntity>> {
+        OrderItemMapper, OrderItemEntityRepository> {
 
     @Autowired
     OrderItemEntityRepository orderItemEntityRepository;

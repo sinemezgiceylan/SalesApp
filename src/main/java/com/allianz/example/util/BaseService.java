@@ -1,10 +1,16 @@
 package com.allianz.example.util;
 
+import com.allianz.example.database.entity.AddressEntity;
 import com.allianz.example.database.entity.SettingsEntity;
+import com.allianz.example.model.PageDTO;
 import com.allianz.example.util.dbutil.BaseEntity;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -58,8 +64,30 @@ public abstract class BaseService<Entity extends BaseEntity, DTO extends BaseDTO
         }
     }
 
-    public List<DTO> getAll() {
-        return getMapper().entityListToDTOList(getRepository().findAll());
-    }
+
+        public PageDTO<DTO> getAll(BaseFilterRequestDTO baseFilterRequestDTO) {
+            Pageable pageable = null;
+            if (baseFilterRequestDTO.getSortDTO() != null) {
+                if (baseFilterRequestDTO.getSortDTO().getDirectionEnum() == Sort.Direction.DESC)
+                {
+                    pageable = PageRequest.of(baseFilterRequestDTO.getPageNumber(),
+                            baseFilterRequestDTO.getPageSize(),
+                            Sort.by(baseFilterRequestDTO.getSortDTO().getColumnName()).descending());
+                } else {
+                    pageable = PageRequest.of(baseFilterRequestDTO.getPageNumber(),
+                            baseFilterRequestDTO.getPageSize(),
+                            Sort.by(baseFilterRequestDTO.getSortDTO().getColumnName()).ascending());
+                }
+            } else {
+                pageable = PageRequest.of(baseFilterRequestDTO.getPageNumber(),
+                        baseFilterRequestDTO.getPageSize(),
+                        Sort.by("id").ascending());
+            }
+
+            Page<Entity> entityPage = getRepository().findAll(pageable);
+
+
+            return getMapper().pageEntityToPageDTO(entityPage);
+        };
 
 }

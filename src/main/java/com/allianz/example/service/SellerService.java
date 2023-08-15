@@ -5,7 +5,9 @@ import com.allianz.example.database.entity.SellerEntity;
 import com.allianz.example.database.entity.SettingsEntity;
 import com.allianz.example.database.repository.SellerEntityRepository;
 import com.allianz.example.database.repository.SettingsEntityRepository;
+import com.allianz.example.database.repository.TaxEntityRepository;
 import com.allianz.example.mapper.SellerMapper;
+import com.allianz.example.mapper.TaxMapper;
 import com.allianz.example.model.BillDTO;
 import com.allianz.example.model.SellerDTO;
 import com.allianz.example.model.SettingsDTO;
@@ -23,8 +25,7 @@ import java.util.UUID;
 
 @Service
 public class SellerService extends BaseService<SellerEntity, SellerDTO, SellerRequestDTO,
-        IBaseMapper<SellerDTO, SellerEntity, SellerRequestDTO>,
-        IBaseRepository<SellerEntity>> {
+        SellerMapper, SellerEntityRepository> {
 
     @Autowired
     SellerEntityRepository sellerEntityRepository;

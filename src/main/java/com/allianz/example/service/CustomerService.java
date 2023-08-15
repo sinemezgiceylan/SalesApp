@@ -25,8 +25,7 @@ import java.util.UUID;
 
 @Service
 public class CustomerService extends BaseService<CustomerEntity, CustomerDTO, CustomerRequestDTO,
-        IBaseMapper<CustomerDTO, CustomerEntity, CustomerRequestDTO>,
-        IBaseRepository<CustomerEntity>> {
+        CustomerMapper, CustomerEntityRepository> {
 
     @Autowired
     CustomerEntityRepository customerEntityRepository;

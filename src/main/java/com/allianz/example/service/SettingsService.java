@@ -3,7 +3,9 @@ package com.allianz.example.service;
 import com.allianz.example.database.entity.SettingsEntity;
 import com.allianz.example.database.entity.TaxEntity;
 import com.allianz.example.database.repository.SettingsEntityRepository;
+import com.allianz.example.database.repository.TaxEntityRepository;
 import com.allianz.example.mapper.SettingsMapper;
+import com.allianz.example.mapper.TaxMapper;
 import com.allianz.example.model.SettingsDTO;
 import com.allianz.example.model.TaxDTO;
 import com.allianz.example.model.requestDTO.SettingsRequestDTO;
@@ -20,8 +22,7 @@ import java.util.UUID;
 
 @Service
 public class SettingsService extends BaseService<SettingsEntity, SettingsDTO, SettingsRequestDTO,
-        IBaseMapper<SettingsDTO, SettingsEntity, SettingsRequestDTO>,
-        IBaseRepository<SettingsEntity>>  {
+        SettingsMapper, SettingsEntityRepository>  {
 
     @Autowired
     SettingsMapper settingsMapper;

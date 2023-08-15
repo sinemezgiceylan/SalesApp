@@ -1,14 +1,15 @@
 package com.allianz.example.mapper;
 
 import com.allianz.example.database.entity.SettingsEntity;
+import com.allianz.example.model.PageDTO;
 import com.allianz.example.model.SettingsDTO;
 import com.allianz.example.model.requestDTO.SettingsRequestDTO;
 import com.allianz.example.util.IBaseMapper;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Component
 public class SettingsMapper implements IBaseMapper<SettingsDTO, SettingsEntity, SettingsRequestDTO> {
@@ -90,4 +91,11 @@ public class SettingsMapper implements IBaseMapper<SettingsDTO, SettingsEntity, 
 
         return entity;
     }
+
+    @Override
+    public PageDTO<SettingsDTO> pageEntityToPageDTO(Page<SettingsEntity> settingsEntities) {
+        return null;
+    }
+
+
 }

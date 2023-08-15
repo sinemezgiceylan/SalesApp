@@ -2,14 +2,12 @@ package com.allianz.example.mapper;
 
 import com.allianz.example.database.entity.CategoryEntity;
 import com.allianz.example.database.entity.ProductEntity;
-import com.allianz.example.model.CategoryDTO;
-import com.allianz.example.model.PersonDTO;
-import com.allianz.example.model.ProductDTO;
-import com.allianz.example.model.TaxDTO;
+import com.allianz.example.model.*;
 import com.allianz.example.model.requestDTO.ProductRequestDTO;
 import com.allianz.example.util.IBaseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -121,6 +119,11 @@ public class ProductMapper implements IBaseMapper<ProductDTO, ProductEntity, Pro
 
     @Override
     public ProductEntity requestDTOToExistEntity(ProductRequestDTO productRequestDTO, ProductEntity entity) {
+        return null;
+    }
+
+    @Override
+    public PageDTO<ProductDTO> pageEntityToPageDTO(Page<ProductEntity> productEntities) {
         return null;
     }
 }

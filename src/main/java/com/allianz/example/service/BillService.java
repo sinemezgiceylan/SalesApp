@@ -22,8 +22,7 @@ import java.util.UUID;
 
 @Service
 public class BillService extends BaseService<BillEntity, BillDTO, BillRequestDTO,
-        IBaseMapper<BillDTO, BillEntity, BillRequestDTO>,
-        IBaseRepository<BillEntity>> {
+        BillMapper, BillEntityRepository> {
 
     @Autowired
     BillEntityRepository billEntityRepository;

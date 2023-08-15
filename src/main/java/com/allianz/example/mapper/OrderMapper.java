@@ -2,10 +2,12 @@ package com.allianz.example.mapper;
 
 import com.allianz.example.database.entity.OrderEntity;
 import com.allianz.example.model.OrderDTO;
+import com.allianz.example.model.PageDTO;
 import com.allianz.example.model.requestDTO.OrderRequestDTO;
 import com.allianz.example.util.IBaseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -98,6 +100,11 @@ public class OrderMapper implements IBaseMapper<OrderDTO, OrderEntity, OrderRequ
 
     @Override
     public OrderEntity requestDTOToExistEntity(OrderRequestDTO orderRequestDTO, OrderEntity entity) {
+        return null;
+    }
+
+    @Override
+    public PageDTO<OrderDTO> pageEntityToPageDTO(Page<OrderEntity> orderEntities) {
         return null;
     }
 }

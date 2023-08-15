@@ -2,9 +2,11 @@ package com.allianz.example.mapper;
 
 import com.allianz.example.database.entity.BillEntity;
 import com.allianz.example.model.BillDTO;
+import com.allianz.example.model.PageDTO;
 import com.allianz.example.model.requestDTO.BillRequestDTO;
 import com.allianz.example.util.IBaseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -102,6 +104,11 @@ public class BillMapper implements IBaseMapper<BillDTO, BillEntity, BillRequestD
 
     @Override
     public BillEntity requestDTOToExistEntity(BillRequestDTO billRequestDTO, BillEntity entity) {
+        return null;
+    }
+
+    @Override
+    public PageDTO<BillDTO> pageEntityToPageDTO(Page<BillEntity> billEntities) {
         return null;
     }
 }

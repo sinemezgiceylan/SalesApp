@@ -1,9 +1,11 @@
 package com.allianz.example.mapper;
 
 import com.allianz.example.database.entity.SellerEntity;
+import com.allianz.example.model.PageDTO;
 import com.allianz.example.model.SellerDTO;
 import com.allianz.example.model.requestDTO.SellerRequestDTO;
 import com.allianz.example.util.IBaseMapper;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -97,6 +99,11 @@ public class SellerMapper implements IBaseMapper<SellerDTO, SellerEntity, Seller
 
     @Override
     public SellerEntity requestDTOToExistEntity(SellerRequestDTO sellerRequestDTO, SellerEntity entity) {
+        return null;
+    }
+
+    @Override
+    public PageDTO<SellerDTO> pageEntityToPageDTO(Page<SellerEntity> sellerEntities) {
         return null;
     }
 }
